@@ -41,7 +41,7 @@ class RegisterCMS extends Component {
             password: this.state.password 
         }
         // console.log("POST success ! ", account);
-        axios.post('http://db.kingattorneyapp.com/register', account).then((result)=>{
+        axios.post('http://database.kingattorneyapp.com//register', account).then((result)=>{
             // console.log(result.data);
             if (result.data.error === true){
                 this.props.notification('danger', result.data.msg, 'top-right');
