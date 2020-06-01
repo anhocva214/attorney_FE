@@ -41,7 +41,7 @@ class RegisterCMS extends Component {
             password: this.state.password 
         }
         // console.log("POST success ! ", account);
-        axios.post('http://database.kingattorneyapp.com/register', account).then((result)=>{
+        axios.post('http://localhost:3003/register', account).then((result)=>{
             // console.log(result.data);
             if (result.data.error === true){
                 this.props.notification('danger', result.data.msg, 'top-right');
@@ -84,7 +84,7 @@ class RegisterCMS extends Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input type="text" onChange={(event)=>this.on_change(event)} className="form-control" name="email" placeholder="Nhập email vào đây" />
+                            <input type="email" onChange={(event)=>this.on_change(event)} className="form-control" name="email" placeholder="Nhập email vào đây" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="numberphone">Số điện thoại</label>
