@@ -47,7 +47,7 @@ class RegisterCMS extends Component {
                 this.props.notification('danger', result.data.msg, 'top-right');
             }
             else{
-                this.props.notification('success', result.data.msg, 'bottom-right');
+                this.props.notification('success', result.data.msg, 'top-right');
                 setTimeout(()=>this.props.display_register_page(false), 1000);
             }
         });
