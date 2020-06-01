@@ -1,26 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import { connect } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import RegisterCMS from './Components/RegisterCMS';
+import Thanks from './Components/Thanks';
+
+class App extends Component {
+
+  display_register = ()=>{
+    // console.log(this.props.display_register_page);
+    if (this.props.display_register_page === true || this.props.display_register_page === undefined){
+      return <RegisterCMS/>
+    }
+    else{
+      return <Thanks/>
+    }
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <ToastContainer/>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              {this.display_register()}
+            </Route>
+            {/* <Route path="/thanks">
+              <Thanks />
+            </Route> */}
+          </Switch>
+        </Router>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    display_register_page: state.display_register_page
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+      // notification: (type_notifi, title_notifi, position) => {
+      //     dispatch({type: "NOTIFICATION", type_notifi, title_notifi, position})
+      // },
+      // check_connect: () => {
+      //     dispatch({type: "CHECK_CONNECT"})
+      // }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.info-register-page {
+  background-image: url(../img/bg-law.jpg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-register-page .form-info {
+  width: 50%;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 15px 0px;
+  box-shadow: 0px 0px 10px 0px;
+  z-index: 1;
+  padding: 25px 30px;
+  border-radius: 20px;
+  background-color: #4220065c;
+}
+
+.info-register-page .comming-soon {
+  position: absolute;
+  width: 50%;
+  left: 27%;
+  z-index: 2;
+}
+
+main.thanks-page {
+  background-image: url(../img/thanks.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+main.thanks-page .text-thanks {
+  width: 70%;
+  -webkit-box-shadow: 9px 9px 11px 0px #1114;
+          box-shadow: 9px 9px 11px 0px #1114;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .info-register-page .form-info,
+  .info-register-page .comming-soon {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .info-register-page .form-info,
+  .info-register-page .comming-soon {
+    width: 75%;
+  }
+  .info-register-page .comming-soon {
+    margin-top: 10px;
+    left: 17%;
+    z-index: 0;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .info-register-page .comming-soon {
+    left: 0%;
+  }
+  .info-register-page .form-info,
+  .info-register-page .comming-soon {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
